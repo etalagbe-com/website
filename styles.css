@@ -110,32 +110,14 @@ nav {
   color: #1e293b;
 }
 
-.price-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0.9rem 0 1rem;
-  padding: 0.9rem 1.35rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(13, 148, 136, 0.96), rgba(20, 184, 166, 0.92));
-  border: 1px solid rgba(13, 148, 136, 0.18);
-  color: #f0fdfa;
-  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-  font-size: clamp(1.6rem, 2vw, 2.2rem);
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  box-shadow: 0 14px 28px rgba(13, 148, 136, 0.18);
-}
-
 .trust-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
-  margin: 0 0 1.2rem;
+  margin: 1rem 0 1.2rem;
 }
 
-.trust-row span {
+.trust-row > span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -391,3 +373,60 @@ nav {
     height: 320px;
   }
 }
+
+.bangla-box .panel-highlight {
+  margin: 1rem 0;
+  color: #dc2626;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.5;
+  animation: panel-blink 1.5s ease-in-out infinite;
+}
+
+@keyframes panel-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bangla-box .panel-highlight {
+    animation: none;
+  }
+}
+
+.english-usage {
+  margin-top: 2rem;
+}
+
+.english-usage ul {
+  margin: 1rem 0 0;
+  padding-left: 1.3rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.english-usage li {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.nav { gap: 1rem; flex-wrap: wrap; padding-block: 0.8rem; }
+.nav nav { margin-left: auto; }
+.language-control { display: flex; align-items: center; gap: 0.5rem; color: #f8fafc; }
+.language-control label { font-size: 0.85rem; }
+.language-control select { padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; color: #1e293b; font: inherit; cursor: pointer; }
+.language-control select:focus-visible { outline: 3px solid #14b8a6; outline-offset: 3px; }
+html[lang="bn"] .hero h1 { line-height: 1.1; }
+html[lang="bn"] h2 { line-height: 1.4; letter-spacing: normal; }
+html[lang="bn"] .eyebrow,
+html[lang="bn"] .section-tag,
+html[lang="bn"] .trust-row > span { letter-spacing: normal; }
+@media (max-width: 760px) {
+  .language-control { margin-left: auto; }
+  .nav nav { order: 3; width: 100%; justify-content: center; margin-left: 0; }
+}
+
+html[lang="zh-Hans"] h2 { line-height: 1.4; letter-spacing: normal; }
+html[lang="zh-Hans"] .eyebrow,
+html[lang="zh-Hans"] .section-tag,
+html[lang="zh-Hans"] .trust-row > span { letter-spacing: normal; }
